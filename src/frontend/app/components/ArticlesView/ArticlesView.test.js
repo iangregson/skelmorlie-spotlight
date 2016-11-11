@@ -1,12 +1,13 @@
-// import { React, shallow, mount, expect, assert, jsdom } from '../../../testHelpers'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-// import { ArticlesView } from './ArticlesView'
+import { ArticlesView } from './ArticlesView'
 
-// describe('<ArticlesView /> component', () => {
-//   let articleArray = [{ msg: 'Test', lvl: 'info' }]
-//   const ArticlesViewComponent = shallow(<ArticlesView store={ articleArray } />)
-//   it('should render without exploding anything', () => {
-//     expect(ArticlesViewComponent).to.be.ok
-//     expect(ArticlesViewComponent).to.have.length(1)
-//   })
-// })
+describe('<ArticlesView /> component', () => {
+    
+    it('renders without crashing assuming it has an array of articles', () => {
+        let articleArray = { articles: [{ id: 1, msg: 'Test', lvl: 'info' }] }
+        const div = document.createElement('div')
+        ReactDOM.render(<ArticlesView store={ articleArray } />, div)
+    })
+})

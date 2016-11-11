@@ -1,12 +1,11 @@
-import { React, shallow, mount, expect, assert, jsdom } from '../../../testHelpers'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 import Header from './Header'
 
 describe('<Header /> component', () => {
-  const HeaderComponent = shallow(<Header />)
-  it('should render without exploding anything', () => {
-    expect(HeaderComponent).to.be.ok
-    expect(HeaderComponent).to.have.length(1)
-    expect(HeaderComponent.find('header')).to.have.length(1)
-  })
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<Header />, div);
+  });
 })
