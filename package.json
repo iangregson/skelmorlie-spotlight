@@ -1,18 +1,77 @@
 {
   "name": "skelmorlie-spotlight",
+  "description": "Local news for Skelmorlie",
+  "main": "src/index.js",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iangregson/skelmorlie-spotlight.git"
+  },
+  "keywords": [
+    "koa",
+    "react",
+    "socket.io"
+  ],
+  "author": "Ian Gregson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iangregson/skelmorlie-spotlight/issues"
+  },
+  "proxy": "http://localhost:5000/",
+  "homepage": "https://github.com/iangregson/skelmorlie-spotlight#readme",
   "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-istanbul": "2.0.3",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-1": "^6.13.0",
+    "babel-register": "^6.14.0",
+    "chai": "3.5.0",
+    "coveralls": "2.11.12",
+    "eslint": "^3.4.0",
+    "istanbul": "1.1.0-alpha.1",
+    "koa-webpack-dev-middleware": "1.3.0",
+    "koa-webpack-hot-middleware": "1.0.3",
+    "localStorage": "1.0.3",
+    "mocha": "3.1.0",
+    "nodemon": "^1.10.2",
     "react-scripts": "0.7.0"
   },
   "dependencies": {
+    "koa": "^2.0.0-alpha.6",
+    "koa-bodyparser": "^2.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-helmet": "2.0.0",
+    "koa-router": "^7.0.1",
+    "koa-static": "2.0.0",
+    "mobx": "^2.5.1",
+    "mobx-react": "^3.5.5",
+    "pm2": "2.1.4",
     "react": "15.3.2",
-    "react-dom": "15.3.2"
+    "react-dom": "15.3.2",
+    "scruffy": "1.0.1",
+    "semantic-ui-react": "0.59.0",
+    "socket.io": "^1.4.8",
+    "socket.io-client": "1.5.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "clean": "rm -rf build && rm -rf dist",
+    "prebuild": "npm run clean",
+    "build": "npm run build:react && npm run build:server",
+    "postbuild": "cp -R ./build ./dist/public",
+    "build:react": "react-scripts build",
+    "build:server": "NODE_ENV=production babel src/backend --out-dir dist --ignore bin/dev.js",
+    "dev:react": "react-scripts start",
+    "dev:server": "nodemon src/backend/bin/dev.js --watch src/backend",
+    "pm2:start": "pm2 start src/backend/bin/dev.js --watch",
+    "pm2": "pm2",
+    "start": "npm run build && WEB_CONCURRENCY=1 NODE_ENV=production node build/bin/www",
     "test": "react-scripts test --env=jsdom",
+    "test:server": "NODE_ENV=test mocha src/backend/**/**/*.test.js --compilers jsx?:babel-register",
+    "cover": "CI=true npm test -- --coverage",
     "eject": "react-scripts eject"
   }
 }
