@@ -1,0 +1,36 @@
+.article-entry {
+  margin-top: 1em;
+  padding: 1em 1em;
+  border-left: 1em solid transparent;
+  background-color: #fff;
+  border-bottom: 2px solid #eee;
+}
+
+.article-entry:first-child {
+    border-top: 2px solid #eee;
+}
+
+.message {
+  font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
+}
+
+.title {
+  font-weight: bolder;
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+.posthaven-post-body {
+  margin-left: 2rem;
+}
+
+.info {
+  border-left-color: #CFD8DC;
+}
+
+.warn {
+  border-left-color: #B71C1C;
+}
+.error {
+  border-left-color: #B71C1C;
+}

@@ -1,0 +1,2 @@
+api: nodemon src/backend/bin/dev.js --watch src/backend
+web: react-scripts start
