@@ -7,7 +7,7 @@ var maxMemory = process.env.WEB_MEMORY || 512;    // " " "
 
 pm2.connect(function() {
   pm2.start({
-    script    : 'build/bin/localpipe.js',
+    script    : 'dist/bin/localpipe.js',
     name      : 'skelmorlie-spotlight',     // ----> THESE ATTRIBUTES ARE OPTIONAL:
     exec_mode : 'cluster',            // ----> https://github.com/Unitech/PM2/blob/master/ADVANCED_README.md#schema
     instances : instances,

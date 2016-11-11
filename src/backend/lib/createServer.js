@@ -19,7 +19,9 @@ export default async function createServer(opts) {
   let server, io
 
   if (process.env.NODE_ENV === 'production') {
-    app.use(convert(serve(path.join(__dirname, '..'))))
+    app.use(convert(serve(path.join(__dirname, '../public'))))
+    app.use(convert(serve(path.join(__dirname, '../public/static/js'))))
+    app.use(convert(serve(path.join(__dirname, '../public/static/css'))))
     app.use(KoaHelmet())
   }
 
