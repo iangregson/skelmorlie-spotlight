@@ -71,7 +71,7 @@
     "dev": "NODE_ENV=development PORT=5000 nf start --procfile dev_procfile",
     "pm2:start": "npm run pm2 -- start src/backend/bin/dev.js --watch",
     "pm2": "pm2",
-    "start": "npm run build && WEB_CONCURRENCY=1 NODE_ENV=production node dist/bin/www",
+    "start": "WEB_CONCURRENCY=1 NODE_ENV=production node dist/bin/www",
     "test": "react-scripts test --env=jsdom",
     "test:server": "NODE_ENV=test mocha src/backend/**/**/*.test.js --compilers jsx?:babel-register",
     "cover": "CI=true npm test -- --coverage --forceExit",
