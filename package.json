@@ -42,7 +42,6 @@
     "react-scripts": "0.7.0"
   },
   "dependencies": {
-    "axios": "0.15.2",
     "classnames": "2.2.5",
     "koa": "^2.0.0-alpha.6",
     "koa-bodyparser": "^2.2.0",
