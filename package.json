@@ -42,6 +42,8 @@
     "react-scripts": "0.7.0"
   },
   "dependencies": {
+    "axios": "0.15.2",
+    "classnames": "2.2.5",
     "koa": "^2.0.0-alpha.6",
     "koa-bodyparser": "^2.2.0",
     "koa-convert": "^1.2.0",
@@ -73,7 +75,7 @@
     "start": "npm run build && WEB_CONCURRENCY=1 NODE_ENV=production node dist/bin/www",
     "test": "react-scripts test --env=jsdom",
     "test:server": "NODE_ENV=test mocha src/backend/**/**/*.test.js --compilers jsx?:babel-register",
-    "cover": "CI=true react-scripts test --env=jsdom --coverage",
+    "cover": "CI=true npm test -- --coverage --forceExit",
     "eject": "react-scripts eject"
   }
 }

@@ -1,5 +1,6 @@
 import { extendObservable } from 'mobx'
 import io from 'socket.io-client'
+import axios from 'axios'
 
 export class ArticleStore {
   constructor({ socket }) {
@@ -19,12 +20,11 @@ export class ArticleStore {
   }
 
   fetchArticles() {
-    fetch('/api/articles')
+    axios.get('/api/articles')
     .then(r => r.json())
     .then(newArticles => { this.articles = newArticles })
     .catch(e => { console.log(e) })
   }
 }
 
-// export default new ArticleStore({ socket: window.socket });
 export default new ArticleStore({ socket: io() });
