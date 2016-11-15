@@ -5,6 +5,9 @@ import { Accordion, Icon } from 'semantic-ui-react'
 import './ArticleEntry.css'
 
 export default class ArticleEntry extends React.Component {
+  componentDidMount() {
+    document.getElementById('loader').classList.add('loaded');
+  }
 
   render() {
     return (
