@@ -55,6 +55,7 @@
     "pm2": "2.1.4",
     "react": "15.3.2",
     "react-dom": "15.3.2",
+    "react-flip-move": "2.6.10",
     "scruffy": "1.0.1",
     "semantic-ui-react": "0.59.0",
     "socket.io": "^1.4.8",

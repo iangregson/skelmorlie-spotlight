@@ -1,5 +1,6 @@
 import React from 'react'
 import { observer } from 'mobx-react'
+import FlipMove from 'react-flip-move'
 
 import './ArticlesView.css'
 
@@ -14,7 +15,9 @@ export class ArticlesView extends React.Component {
   render() {
     return (
       <div className="container">
-        { this.store.articles.map(article => <ArticleEntry key={ article.id } article={ article } />) }
+        <FlipMove enterAnimation="elevator" leaveAnimation="elevator">
+          { this.store.articles.map(article => <ArticleEntry key={ article.id } article={ article } />) }
+        </FlipMove>
       </div>
     )
   }
