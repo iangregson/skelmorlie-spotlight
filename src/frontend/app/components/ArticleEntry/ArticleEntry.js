@@ -9,8 +9,8 @@ export default class ArticleEntry extends React.Component {
   //   if (document.getElementById('loader')) document.getElementById('loader').classList.add('loaded');
   // }
 
-  render() {
-    return (
+	render() {
+		return (
       <div className={ cx('article-entry', this.props.article.lvl ) }>
         <Accordion>
           <Accordion.Title>
@@ -22,6 +22,6 @@ export default class ArticleEntry extends React.Component {
           </Accordion.Content>
         </Accordion>
       </div>
-    )
-  }
+		)
+	}
 }
