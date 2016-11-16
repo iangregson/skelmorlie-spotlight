@@ -8,7 +8,7 @@ import './ArticleEntry.css'
 const globalEvents = new EventEmitter()
 
 globalEvents.on('articleEntryLoaded', () => {
-    document.getElementById('loader').classList.add('loaded')
+    if (document.getElementById('loader')) document.getElementById('loader').classList.add('loaded')
 })
 
 export default class ArticleEntry extends React.Component {
