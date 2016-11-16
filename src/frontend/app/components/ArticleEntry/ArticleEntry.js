@@ -1,13 +1,20 @@
 import React from 'react'
 import cx from 'classnames'
 import { Accordion, Icon } from 'semantic-ui-react'
+import EventEmitter from 'events'
 
 import './ArticleEntry.css'
 
+const globalEvents = new EventEmitter()
+
+globalEvents.on('articleEntryLoaded', () => {
+    document.getElementById('loader').classList.add('loaded')
+})
+
 export default class ArticleEntry extends React.Component {
-  // componentDidMount() {
-  //   if (document.getElementById('loader')) document.getElementById('loader').classList.add('loaded');
-  // }
+  componentDidMount() {
+    globalEvents.emit('articleEntryLoaded')
+  }
 
 	render() {
 		return (
