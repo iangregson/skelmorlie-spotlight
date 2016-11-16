@@ -6,4 +6,4 @@
 - [ ] Add mailing list capture
 - [X] Loading spinner
 - [X] Testable way of removing loading spinner
-- [ ] Add animations to articles on entry
+- [X] Add animations to articles on entry
