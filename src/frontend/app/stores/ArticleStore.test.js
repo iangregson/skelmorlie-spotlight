@@ -18,7 +18,7 @@ describe('ArticleStore', () => {
     })
 
     it('processNewArticle should add the article and it\'s ID to the relevant arrays', () => {
-        ArticleStore.processNewArticle(newArticle)
+        ArticleStore.processNewArticle(newArticle, ArticleStore)
         expect(ArticleStore.hashes).to.be.a('array').to.have.length(1)
         expect(ArticleStore.articles).to.have.length(1)
     })

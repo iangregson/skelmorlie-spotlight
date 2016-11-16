@@ -6,17 +6,18 @@ export class ArticleStore {
     this.socket = socket
     this.hashes = []
     extendObservable(this, { articles: [] })
+    let self = this
     this.socket.on('newArticle', (newArticle) => {
-      this.processNewArticle(newArticle)
+      this.processNewArticle(newArticle, self)
     })
     this.fetchArticles()
   }
 
-  processNewArticle(newArticle) {
+  processNewArticle(newArticle, self) {
       let articleHash = (newArticle.title + newArticle.date).replace(/\s/g, '')
-      if (this.hashes.includes(articleHash) === false) {
-        this.hashes.push(articleHash)
-        this.articles.unshift(newArticle)
+      if (self.hashes.includes(articleHash) === false) {
+        self.hashes.push(articleHash)
+        self.articles.unshift(newArticle)
       }
   }
 
