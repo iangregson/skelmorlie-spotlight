@@ -7,4 +7,23 @@
 .brand {
   text-transform: uppercase;
   font-weight: 600;
+  display: inline-block;
+  width: 50%;
+}
+
+.feedback {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+  font-size: large;
+}
+
+.feedback a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.feedback a:hover {
+  text-decoration: none;
+  color: #CFD8DC;
 }

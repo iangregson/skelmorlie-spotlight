@@ -3,6 +3,7 @@ import React from 'react'
 
 // Styles
 import './App.css'
+import 'font-awesome/css/font-awesome.min.css'
 
 // Components
 import Header from './components/Header'
